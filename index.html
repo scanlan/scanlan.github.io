@@ -1,13 +1,97 @@
 <html>
 <head>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
-<title>Pixi Web Page</title>
-<script>
-//location.href='./pixi';
-</script>
+<style>
+/* Dropdown Button */
+.dropbtn {
+    background-color: green;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: yellow;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: red}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: red;
+}
+#main{width:400px;border:white solid 3px;height:400px}
+.comic{font-family:Comic Sans MS;
+color:white;
+font-size:18px;
+text-align:center;
+padding: 5px;
+
+
+}
+body{background-color:black;
+background-image:url('dragon.png');
+background-size: 320px 240px;
+background-position:  50 160;
+background-repeat:no-repeat;
+}
+
+</style>
 </head>
 <body>
-<h1>Welcome to my Github Web Site</h1>
-  <a href='./pixi'>Read The Pixi Tutorial</a>
+<div id="main">
+<h1 class="comic">The Scanlan Game Portal</h1>
+<div class="dropdown" style="margin-left:50px">
+  <button class="dropbtn">Classics</button>
+  <div class="dropdown-content">
+    <a href="#">Simon</a>
+    <a href="#">Tic-Tac-Toe</a>
+    <a href="#">Hangman</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Arcade</button>
+  <div class="dropdown-content">
+    <a href="#">B1</a>
+    <a href="#">B2</a>
+    <a href="#">B3</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Maze Games</button>
+  <div class="dropdown-content">
+    <a href="#">C1</a>
+    <a href="#">C2</a>
+    <a href="#">C3</a>
+  </div>
+</div>
+</div>
 </body>
 </html>
