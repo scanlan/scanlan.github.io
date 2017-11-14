@@ -1,0 +1,17 @@
+<html>
+<head>
+<script src="jquery.js"></script>
+<script>
+$(function(){
+ $('#clickme').click(
+ function(){
+  $('#fader').toggle(1000);
+ });
+});
+</script>
+</head>
+<body>
+<button id="clickme">Click Me</button>
+<h1 id="fader">I fade in and out</h1>
+</body>
+</html>
