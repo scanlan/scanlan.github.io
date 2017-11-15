@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>
+Simon!
+</title>
+<style>
+button:disabled
+{
+	opacity:.5;
+	cursor:not-allowed;
+}
+button:enabled
+{
+	opacity:1;
+	cursor:hand;
+}
+.clr
+{
+	color:black;
+	height:50px;
+	width:200px;
+	cursor:hand;
+	opacity:.5;
+}
+#b1
+{
+	position:absolute;
+	left:100px;
+	top:50px;
+	width:200px;
+	height:150px;
+	background-color:purple;
+}
+#b2
+{
+	position:absolute;
+	left:300px;
+	top:50px;
+	width:200px;
+	height:150px;
+	background-color:yellow;
+}
+#b3
+{
+	position:absolute;
+	left:100px;
+	top:200px;
+	width:200px;
+	height:150px;
+	background-color:green;
+}
+#b4
+{
+	position:absolute;
+	left:300px;
+	top:200px;
+	width:200px;
+	height:150px;
+	background-color:blue;
+}
+#scoreboard
+{
+	position:absolute;
+	left:100px;
+	top:10px;
+	width:200px;
+	height:120px;
+}
+
+</style>
+<script>
+//var audio = new Audio('follow.mp3');
+var reps=0,turnoff=false,c_pattern="",h_pattern="";
+
+function guess()
+{
+   var g=Math.ceil(Math.random()*4);
+   console.log(g);
+   blink(document.getElementById('b'+g));
+}
+
+function blink(but)
+	{
+	  var sndnumber=but.id.substr(1);
+	  var snd=new Audio("beep"+sndnumber+".mp3");
+	  snd.play();
+      but.disabled=true;
+	  st=setTimeout(function(){
+	  clearTimeout(st);
+	  but.disabled=false;
+	  },150);
+	}
+function init()
+	{
+	c_pattern="";
+	h_pattern="";
+	b1.style.backgroundColor="red";
+	b2.style.backgroundColor="green";
+	b3.style.backgroundColor="yellow";
+	b4.style.backgroundColor="orange";
+		start.onclick=function()
+		{
+		this.disabled=true;
+	      //setTimeout(blinkon(),1000);
+		turnOn();
+		b1.onclick=function(){blink(this);}
+		b2.onclick=function(){blink(this);}
+		b3.onclick=function(){blink(this);}
+		b4.onclick=function(){blink(this);}
+		setTimeout(function(){guess();},1000);
+		}
+		
+	}
+     
+
+function turnOneon(b){
+	b.disabled=false;
+}
+
+function turnOn()
+{
+	b1.disabled=false;
+	b2.disabled=false;
+	b3.disabled=false;
+	b4.disabled=false;
+}
+</script>
+</head>
+<body onload="init()">
+<div id="scoreboard">
+<button id="start">Press to Start Game</button>
+Score <span id="score">0</span>
+</div>
+<button id="b1" class="clr"  disabled></button>
+<button id="b2" class="clr"  disabled></button>
+<button id="b3" class="clr"  disabled></button>
+<button id="b4" class="clr"  disabled></button>
+
+</body>
+</html>
